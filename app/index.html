@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Antengo Challenge</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/app.css"/>
+  <link rel="stylesheet" href="stylesheets/beltstrap.css"/>
+  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body ng-cloak>
+  
+  <div class="navbar">
+    <div class="col-xs-4 text-center">
+      <img src="http://antengo.com/wp-content/uploads/2013/06/img1.png" class="img-responsive img-center">
+    </div>
+    <div class="col-xs-4">
+      <h3 class="text-center">Search Antengo</h3>
+      <input type="text" ng-model="search" class="width100">
+    </div>
+    <div class="col-xs-4 text-center" ng-controller="categoriesCtrl">
+      <br><i class="fa fa-3x fa-tags purple" ng-mouseenter="catbox=true"></i><br><p>Categories</p>
+      <div class="categories" ng-show="catbox" ng-mouseleave="catbox=false">
+        <div class="btn-group-vertical">
+          <a class="btn btn-default" ng-click="type(null)">All</a>
+          <a class="btn btn-default" ng-click="type(cat)" ng-repeat="cat in cats">{{cat}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+  <div>Angular seed app: v<span app-version></span></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="app.js"></script>
+  <script src="components/data/postsService.js"></script>
+  <script src="components/single/modalService.js"></script>
+  <script src="components/single/singleInstanceCtrl.js"></script>
+  <script src="components/categories/categories.js"></script>
+  <script src="components/categories/categoriesCtrl.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

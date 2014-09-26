@@ -1,0 +1,21 @@
+<i class="fa fa-2x fa-times pull-right" ng-click="close()"></i>
+<div class="single">
+	<h1 class="text-center">{{post.title}}</h1>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="text-center">
+				<img class="img-responsive img-center" src="{{shown}}">
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-xs-2" ng-repeat="thumb in thumbs">
+					<img class="img-responsive" src="{{thumb}}" ng-click="select($index)">
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<h3>{{post.price}}</h3>
+			<p>{{post.text}}</p>
+		</div>
+	</div>
+</div>
